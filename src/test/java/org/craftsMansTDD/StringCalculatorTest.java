@@ -30,4 +30,19 @@ public class StringCalculatorTest {
         });
         assertEquals("Negative numbers not allowed: [-2, -4]", exception.getMessage());
     }
+
+     @Test
+    public void testNewLinesBetweenNumbers() {
+        assertEquals(6, stringCalculator.addStringNumbers("1\n2,3"));
+    }
+
+    @Test
+    public void testSemicolon() {
+        assertEquals(10, stringCalculator.addStringNumbers("1;5;4"));
+    }
+
+    @Test
+    public void testCustomCheck() {
+        assertEquals(18, stringCalculator.addStringNumbers("//;\n1;\n\n2\n15"));
+    }
 }
