@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StringCalculator {
+    private static final int MAX_NUMBER = 1000;
     public int addStringNumbers(String numbers) {
         int sum = 0;
         // Split the string based on the following special characters
@@ -16,8 +17,10 @@ public class StringCalculator {
                 int number = Integer.parseInt(num);
                 if (number < 0) {
                     negatives.add(number);
-                } else{
-                    sum += number;
+                }else {
+                    if (number < MAX_NUMBER) {
+                        sum += number;
+                    }
                 }
             } catch (NumberFormatException ignored) {
                 // Ignore non-numeric parts

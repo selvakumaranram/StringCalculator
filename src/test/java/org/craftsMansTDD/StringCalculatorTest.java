@@ -45,4 +45,9 @@ public class StringCalculatorTest {
     public void testCustomCheck() {
         assertEquals(18, stringCalculator.addStringNumbers("//;\n1;\n\n2\n15"));
     }
+
+    @Test
+    public void returnZeroIfItisMoreThanThousand() {
+        assertEquals(501, stringCalculator.addStringNumbers("1;500\n2500"));
+    }
 }
