@@ -22,4 +22,12 @@ public class StringCalculatorTest {
     public void returnTwoNumbersWithComma() {
         assertEquals(6, stringCalculator.addStringNumbers("1,5"));
     }
+
+    @Test
+    public void testNegativeNumbers() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+            stringCalculator.addStringNumbers("1,-2,3,-4");
+        });
+        assertEquals("Negative numbers not allowed: [-2, -4]", exception.getMessage());
+    }
 }
