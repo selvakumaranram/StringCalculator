@@ -8,6 +8,7 @@ public class AppController
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        StringCalculator stringCalculator = new StringCalculator();
+        System.out.println(stringCalculator.addStringNumbers("1;2,1\n14"));
     }
 }
